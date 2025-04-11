@@ -1,0 +1,81 @@
+---
+import '../../styles/global.css';
+import { AstroSeo } from '@astrolib/seo';
+import { getImage } from 'astro:assets';
+import macBackground1 from '../../assets/images/mac-background1.jpg';
+import macBackground2 from '../../assets/images/mac-background2.jpg';
+import macBackground3 from '../../assets/images/mac-background3.jpg';
+
+const backgrounds = await Promise.all([
+  getImage({ src: macBackground1, width: 3500 }),
+  getImage({ src: macBackground2, width: 3500 }),
+  getImage({ src: macBackground3, width: 3500 }),
+]);
+---
+
+<!-- Core meta tags -->
+<meta charset='UTF-8' />
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<meta
+  name='viewport'
+  content='width=device-width, initial-scale=1, maximum-scale=1'
+/>
+<meta name='author' content='John Doe' />
+<!-- Replace with your name -->
+
+<!-- SEO Configuration - customize these values -->
+<AstroSeo
+  title={Astro.props.title || 'Arun - BAckend Developer'}
+  description={Astro.props.description ||
+    'Backend Developer based in Tempe, AZ specializing in Java, Python, and modern technologies'}
+  canonical={Astro.props.canonical || 'https://Aruntej.com'}
+  openGraph={{
+    url: Astro.props.openGraph?.url || 'https://Aruntej.com',
+    title: Astro.props.openGraph?.title || 'Arun - BAckend Developer',
+    description:
+      Astro.props.openGraph?.description ||
+      'Backend Developer based in Tempe, AZ specializing in Java, Python, and modern technologies',
+    images: [
+      {
+        url: '',
+        // og image here
+      },
+    ],
+    site_name: Astro.props.openGraph?.site_name || 'Arun Tej',
+  }}
+/>
+
+<!-- Add your favicon files in public/images/ -->
+<link rel='apple-touch-icon' sizes='180x180' href='/images/YOUR_FAVICON.svg' />
+<link
+  rel='icon'
+  type='image/png'
+  sizes='32x32'
+  href='/images/YOUR_FAVICON.svg'
+/>
+<link
+  rel='icon'
+  type='image/png'
+  sizes='16x16'
+  href='/images/YOUR_FAVICON.svg'
+/>
+
+<!-- Theme colors for browsers -->
+<meta name='msapplication-TileColor' content='YOUR_COLOR_HEX' />
+<meta name='theme-color' content='YOUR_COLOR_HEX' />
+
+<!-- Auto-generated sitemap -->
+<link rel='sitemap' href='/sitemap-index.xml' />
+
+<!-- Preload background images for performance -->
+{
+  backgrounds.map((bg) => (
+    <link
+      rel='preload'
+      href={bg.src}
+      as='image'
+      type='image/webp'
+      fetchpriority='high'
+    />
+  ))
+}

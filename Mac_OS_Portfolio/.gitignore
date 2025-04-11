@@ -1,0 +1,46 @@
+# macOS system files
+.DS_Store
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Astro build artifacts
+.astro/
+dist/
+
+# Vercel deployment files
+.vercel/
+.vercel/output/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Project metadata and temporary files
+.metadata/
+*.log
+*.lock
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# Dependency lock files (optional, include if you want to track them)
+# package-lock.json
+# yarn.lock
+
+# Common build outputs
+build/
+out/
+tmp/
+temp/
+
+# Submodule or nested repository folders (if not using submodules)
+Mac_OS_Portfolio/Mac_OS_Portfolio/.git
+Mac_OS_Portfolio/website/.git

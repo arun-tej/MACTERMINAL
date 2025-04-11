@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LandingPage from '../components/LandingPage.astro';
+---
+
+<!-- 
+  Customize these values for your portfolio:
+  - title: Your name and role
+  - description: Brief description of your expertise
+  - canonical: Your website URL
+  - openGraph: Social media sharing metadata
+-->
+<Layout
+  title='Arun Tej - Backend Developer'
+  description='Backend Developer based Tempe, AZ specializing in Java, Python, and modern technologies'
+  canonical='https://aruntej.com'
+  openGraph={{
+    url: 'https://aruntej.com',
+    title: 'Arun Tej  - Backend Developer',
+    description:
+      'Backend Developer based Tempe, AZ specializing in Java, Python, and modern technologies',
+    site_name: 'Arun Tej',
+  }}
+>
+  <LandingPage />
+</Layout>
